@@ -1,6 +1,7 @@
 # tgisper
 **This was first created by https://github.com/ckaytev/tgisper.
 **
+
 Whisper is a general-purpose speech recognition model. It is trained on a large dataset of diverse audio and is also a multi-task model that can perform multilingual speech recognition as well as speech translation and language identification. For more details: [github.com/openai/whisper](https://github.com/openai/whisper/)
 
 faster-whisper is a reimplementation of OpenAI's Whisper model using CTranslate2, which is a fast inference engine for Transformer models. For more details: [github.com/guillaumekln/faster-whisper](https://github.com/guillaumekln/faster-whisper/)
