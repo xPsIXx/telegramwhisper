@@ -1,27 +1,30 @@
-![Release](https://img.shields.io/github/v/release/ckaytev/tgisper.svg)
-![Build](https://img.shields.io/github/actions/workflow/status/ckaytev/tgisper/ghcr-publish.yml.svg)
-![Licence](https://img.shields.io/github/license/ckaytev/tgisper.svg)
-
 # tgisper
+**This was first created by https://github.com/ckaytev/tgisper.
+**
 Whisper is a general-purpose speech recognition model. It is trained on a large dataset of diverse audio and is also a multi-task model that can perform multilingual speech recognition as well as speech translation and language identification. For more details: [github.com/openai/whisper](https://github.com/openai/whisper/)
 
 faster-whisper is a reimplementation of OpenAI's Whisper model using CTranslate2, which is a fast inference engine for Transformer models. For more details: [github.com/guillaumekln/faster-whisper](https://github.com/guillaumekln/faster-whisper/)
 
-Tgisper is a bot for Telegram using a model from OpenAI to convert voice messages to text. It is enough to record a voice message or send it to the bot from another chat and you're done!
+Telegramwhisper is a bot for Telegram using a model from OpenAI to convert voice messages to text. It is enough to record a voice message or send it to the bot from another chat and you're done!
 
 
 ## Usage
 ```bash
 docker run -d \
--e ASR_MODEL=small \
--e BOT_TOKEN=3916463517:ABC2tkTGkD9FHl4Ra-jv2Vv6DVECTyeV3Mm \
--e OMP_NUM_THREADS=2 \
-ghcr.io/ckaytev/tgisper:main
+-e ASR_MODEL=medium.en \
+-e BOT_TOKEN= \
+-e OMP_NUM_THREADS=4 \
+ghcr.io/xPsIXx/telegramwhisper :main
 ```
 
 ## [Available models and languages](https://github.com/openai/whisper/#available-models-and-languages)
 
-
+Size 	  Parameters 	English-only model 	  Multilingual model 	VRAM 	  Relative speed
+tiny 	  39 M 	      tiny.en 	            tiny 	              ~1 GB 	~32x
+base 	  74 M 	      base.en 	            base 	              ~1 GB 	~16x
+small 	244 M 	    small.en 	            small 	            ~2 GB 	~6x
+medium 	769 M 	    medium.en 	          medium 	            ~ 5 GB 	~2x
+large 	1550 M 	    N/A 	                large 	            ~10 GB 	1x
 
 ## Setup and run (Development Environment)
 
@@ -58,13 +61,13 @@ poetry install
 
 Set environment variable:
 ```sh
-export BOT_TOKEN=3916463517:ABC2tkTGkD9FHl4Ra-jv2Vv6DVECTyeV3Mm
+export BOT_TOKEN=
 
 # The list of available models (https://github.com/openai/whisper/#available-models-and-languages)
-export ASR_MODEL=base 
+export ASR_MODEL=medium.en 
 
 # When running on CPU, make sure to set the same number of threads
-export OMP_NUM_THREADS=2
+export OMP_NUM_THREADS=4
 ```
 
 Starting the bot polling:
