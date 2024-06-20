@@ -19,7 +19,7 @@ SAMPLE_RATE = 16000
 def send_welcome(message):
     bot.reply_to(
         message,
-        "Hello! I'm a voice recognition bot 🎤 \nRecord the voice or send it to me ↪️"
+        "Hello! I'm a voice transcription bot 🎤 \nSend your voice message to me ↪️"
     )
 
 
